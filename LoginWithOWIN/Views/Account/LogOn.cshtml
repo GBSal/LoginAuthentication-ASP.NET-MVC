@@ -1,6 +1,6 @@
 ﻿@model LoginWithOWIN.Models.LoginViewModel
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "LogOn";
 }
 
 <div class="container" style="margin-right:50%">
@@ -11,7 +11,7 @@
 
                     <center><h3 style="margin-right:80px">Login</h3></center>
 
-                    @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                    @using (Html.BeginForm("LogOn", "Account", FormMethod.Post))
                     {
                         <div class="modal-body">
 
@@ -40,11 +40,15 @@
                             <div>
                                 <input class="btn btn-primary pull-left col-lg-offset-1" type="submit" value="Login" style="margin-left:35%" />
                             </div>
-
+                          
                         </div>
-
+                        
+                       
 
                     }
+                </div>
+                <div class="text-center">
+                    @Html.ActionLink("Register New User", "Register")
                 </div>
             </div>
         </div>
