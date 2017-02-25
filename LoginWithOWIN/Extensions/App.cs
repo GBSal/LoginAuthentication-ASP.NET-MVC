@@ -11,7 +11,9 @@ namespace LoginWithOWIN.Extensions
     public static class App
     {
 
-
+        /// <summary>
+        /// Private member to load the application salt
+        /// </summary>
         private static string _appSalt = string.Empty;
 
 
@@ -21,10 +23,7 @@ namespace LoginWithOWIN.Extensions
         /// </summary>
         public static string PasswordEncodingPostfix = "|~";
 
-        //public App()
-        //{
-        //    _appSalt = ConfigurationManager.AppSettings["ApplicationSalt"].ToString();
-        //}
+       
 
         /// <summary>
         /// Returns an hashed and salted password.
