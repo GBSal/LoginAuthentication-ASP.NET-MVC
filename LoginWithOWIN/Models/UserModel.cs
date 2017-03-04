@@ -16,6 +16,12 @@ namespace LoginWithOWIN.Models
 
         public string Password { get; set; }
 
+        public string OpenId { get; set; }
+
+        public string OpenCliamId { get; set; }
+
+
+
 
 
     }

@@ -21,7 +21,7 @@ namespace LoginWithOWIN.Services
             {
 
                 _userList = new List<UserModel>();
-                _userList.Add(new UserModel { Id = 1, Email = "msal@mail.com", Name = "MSal", Password = "RR+k6E/DMcqlfigZ1mGK5SUHMB5vaNmtpuMWE2EUnvk=|~" });
+                _userList.Add(new UserModel { Id = 1, Email = "msal@mail.com", Name = "MSal", Password = "RR+k6E/DMcqlfigZ1mGK5SUHMB5vaNmtpuMWE2EUnvk=|~", OpenId = "226758831124026", OpenCliamId= "226758831124026" });
             }
 
             if (_userRoles == null)
@@ -36,6 +36,16 @@ namespace LoginWithOWIN.Services
 
             var user = GetUsers()
                         .Where(x => x.Email == email)
+                        .SingleOrDefault();
+
+            return user;
+
+        }
+
+        public UserModel GetUserByKey(string key)
+        {
+            var user = GetUsers()
+                        .Where(x => x.OpenId == key)
                         .SingleOrDefault();
 
             return user;
